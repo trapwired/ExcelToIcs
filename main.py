@@ -9,8 +9,11 @@ HOLIDAYS = ['x', 'F']
 def start():
     wd_dict = init_workdays()
 
-    files = os.listdir('excel')
-    excel_path = os.path.join('excel', files[1])
+    for file in os.listdir('excel'):
+        if file.endswith('.xlsx'):
+            excel_path = os.path.join('excel', file)
+            break # we only use the first excel we find
+
     df = pd.read_excel(excel_path, sheet_name=SHEET_NAME)
     dates = None
     workdays = None
