@@ -1,9 +1,16 @@
 class Workday:
-    def __init__(self, iden: str, start: str, end: str, e: str = ''):
+    def __init__(self, iden: str, start: str, end: str, name: str = None):
         self.id = iden
         self.start = start
         self.end = end
-        self.others = e
+        self.h_start = int(start[:2])
+        self.m_start = int(start[3:])
+        self.h_end = int(end[:2])
+        self.m_end = int(end[3:])
+        self.name = name
+
+    def get_name(self):
+        return self.name if self.name else self.id
 
 
 def getWorkDays():
@@ -23,3 +30,7 @@ def getWorkDays():
     res.append(Workday('N20', '20:00', '08:00'))
     res.append(Workday('S20', '13:45', '20:00'))
     return res
+
+
+def is_nightshift(wd: Workday):
+    return wd.id in ['NP', '3NP', '3NP*', 'N', 'N20']

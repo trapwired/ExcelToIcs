@@ -4,3 +4,4 @@ pandas
 xlrd
 pytz
 et-xmlfile
+icalendar
