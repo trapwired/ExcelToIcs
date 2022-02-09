@@ -5,7 +5,7 @@ from icalendar import Calendar, Event
 import pytz
 from datetime import datetime
 
-SHEET_NAME = 'Februar'
+SHEET_NAME = 'März'
 NAME = 'Carla'
 HOLIDAYS = ['x', 'F']
 YEAR = 2022
